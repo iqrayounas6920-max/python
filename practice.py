@@ -1,40 +1,40 @@
-marks = [22,44,55,66,77]
-mark=[]
-while True:
-    print("1.Add marks")
-    print("2.View marks")
-    print("3.highest marks")
-    print("4.average marks")
-    print("5.exist")
-    
-    choice = input("Enter your choice:")
-    if choice == "1":
-     m=int(input("enter marks"))
-     marks.append(m)
-     print(marks)
-    elif choice == "2":
-     for mark in marks:
-         print(mark)
-    elif choice == "3":
-       if len(marks) == 0:
-           print("No data")
-       else:
-           print(max(marks))
-    elif choice == "4":
-        if len(marks) == 0:
-            print("No data")
-        else:
-            avg = sum(marks)/len(marks)
-            print(avg)
-    elif choice == "5":
-        print("Good bye")        
+import random
+attempt=5
+game =int(input ("Enter game level:"))
+if game <=50:
+    print("Easy level start")
+elif game <=100:
+    print("medium level start")
+
+elif game <=200:
+        print("Difficult level")
+else:
+    print("Game Over") 
+     
+choice =(input("enter choice:"))
+if choice == "1":
+ number = random.randint(1,50)
+ attempt =5
+elif choice == "2":
+  number = random.randint(1,100)
+  attempt =3
+elif choice == "3":
+ number = random.randint(1,200)
+ attempt =5
+if choice == "4":
+ print("Good bye")
+while attempt >0:
+    guess =int(input("enter guess:"))
+    if guess==number:
+        print("Win")
         break
     else:
-        print("Invaild choice")
- 
+        print("loss")
+        attempt-=1
+        print("Attempts left:", attempt)
 
-    
-    
+if attempt == 0:
+    print("Game Over")
 
 
 
